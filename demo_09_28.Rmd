@@ -1,0 +1,40 @@
+---
+title: "Data Visualization"
+author: "Shubham Suryawanshi"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r}
+pkgs <- c("ggplot2", "dplyr", "tidyr",
+"mosaicData", "carData",
+"VIM", "scales", "treemapify",
+"gapminder", "ggmap", "choroplethr",
+"choroplethrMaps", "CGPfunctions",
+"ggcorrplot", "visreg",
+"gcookbook", "forcats",
+"survival", "survminer",
+"ggalluvial", "ggridges",
+"GGally", "superheat",
+"waterfalls", "factoextra",
+"networkD3", "ggthemes",
+"hrbrthemes", "ggpol",
+"ggbeeswarm")
+install.packages(pkgs)
+```
+
+```{r}
+library(readr)
+# import data from a comma delimited file
+Salaries <- read_csv("salaries.csv")
+summary(Salaries)
+```
+
+```{r}
+library(ggplot2)
+ggplot(data = Salaries,
+mapping = aes(x = yrs.service, y = salary))+
+geom_point()
+
+```
+
